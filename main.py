@@ -130,14 +130,18 @@ c1 = np.array([48, 33, 16, 22])
 
 Simplex(A1, b1, c1)
 
-# another example test
-A = np.array([[1, 1, 1, 1, 0, 0],
-            [-1, 2, -2, 0, 1, 0],
-            [2, 1, 0, 0, 0, 1]])
+# SYNTHETIC example test
+N = 3
+M = 4
+A_syn = np.abs(np.random.random((N,M)))
+
+
 
 b = np.array([4, 6, 5])
+b_syn = np.abs(np.random.random(N))
+c_syn = np.random.random(M)
 c = np.array([-1, -2, 1, 0, 0, 0])
 
-Simplex(A, b, c)
+Simplex(A_syn, b_syn, c_syn)
 
 """As seen above, the function ``Simplex`` outputs the correct values.  ``Simplex`` returns more information than necessary (it does not just return the solution), but it can be useful to see the final values of all the key matrices it uses in the algorithm, so we may gain an intuition into what is going on."""
