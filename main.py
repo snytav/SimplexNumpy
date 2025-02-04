@@ -142,6 +142,22 @@ b_syn = np.abs(np.random.random(N))
 c_syn = np.random.random(M)
 c = np.array([-1, -2, 1, 0, 0, 0])
 
-Simplex(A_syn, b_syn, c_syn)
+np.savetxt('A.txt',A_syn,fmt='%25.15e')
+np.savetxt('b.txt',b_syn,fmt='%25.15e')
+np.savetxt('c.txt',c_syn,fmt='%25.15e')
+
+import shutil
+shutil.copy('A.txt','../MatrixSimplex/')
+shutil.copy('b.txt','../MatrixSimplex/')
+shutil.copy('c.txt','../MatrixSimplex/')
+
+# b_syn = np.loadtxt('b.txt')
+# c_syn = np.loadtxt('c.txt')
+# A_syn = np.loadtxt('A.txt')
+# N = b_syn.shape[0]
+# M = c_syn.shape[0]
+# A_syn = A_syn.reshape(N,M)
+
+cbT, cbIndx, cnT, cnIndx, bHat, cnHat = Simplex(A_syn, b_syn, c_syn)
 
 """As seen above, the function ``Simplex`` outputs the correct values.  ``Simplex`` returns more information than necessary (it does not just return the solution), but it can be useful to see the final values of all the key matrices it uses in the algorithm, so we may gain an intuition into what is going on."""
