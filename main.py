@@ -132,7 +132,7 @@ Simplex(A1, b1, c1)
 
 # SYNTHETIC example test
 N = 3
-M = 4
+M = 8
 A_syn = np.abs(np.random.random((N,M)))
 
 
