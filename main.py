@@ -131,8 +131,8 @@ c1 = np.array([48, 33, 16, 22])
 Simplex(A1, b1, c1)
 
 # SYNTHETIC example test
-N = 3
-M = 8
+N = 6
+M = 24
 A_syn = np.abs(np.random.random((N,M)))
 
 
